@@ -10,6 +10,8 @@ import org.springframework.data.repository.query.Param;
 import com.application.flightreservation.Flight.Reservation.Application.entities.Flight;
 
 public interface FlightRepository extends JpaRepository<Flight, Long>{
+
 	@Query("from Flight where departureCity=:departureCity and arrivalCity=:arrivalCity and dateOfDeparture=:dateOfDeparture")
-	List<Flight> findFlight(@Param("departureCity") String departureCity, @Param("arrivalCity") String arrivalCity, @Param("dateOfDeparture") Date dateOfDeparture);
+	List<Flight> findFlight(@Param("departureCity") String from, @Param("arrivalCity") String to, @Param("dateOfDeparture")Date departureDate);
+	
 }
