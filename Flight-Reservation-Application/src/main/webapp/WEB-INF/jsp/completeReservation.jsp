@@ -12,8 +12,8 @@
 <body>
 	<h2>Complete Reservation</h2>
 	Airline: ${flight.operatingAirline}<br/>
-	Airline: ${flight.departureCity}<br/>
-	Airline: ${flight.arrivalCity}<br/>
+	Departure City: ${flight.departureCity}<br/>
+	Arrival City: ${flight.arrivalCity}<br/>
 	
 	<form action="completeReservation" method="post">
 		<pre>
