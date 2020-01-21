@@ -1,6 +1,7 @@
 package com.application.flightreservation.Flight.Reservation.Application.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.application.flightreservation.Flight.Reservation.Application.dto.ReservationRequest;
 import com.application.flightreservation.Flight.Reservation.Application.entities.Flight;
@@ -10,6 +11,7 @@ import com.application.flightreservation.Flight.Reservation.Application.repo.Fli
 import com.application.flightreservation.Flight.Reservation.Application.repo.PassengerRepository;
 import com.application.flightreservation.Flight.Reservation.Application.repo.ReservationRepository;
 
+@Service
 public class ReservationServiceImpl implements ReservationService {
 
 	@Autowired
@@ -29,7 +31,7 @@ public class ReservationServiceImpl implements ReservationService {
 		Passenger passenger = new Passenger();
 		passenger.setFirstName(request.getPassengerFirstName());
 		passenger.setLastName(request.getPassengerLastName());
-		passenger.setPhone(request.getPassengerPhones());
+		passenger.setPhone(request.getpassengerPhone());
 		passenger.setEmail(request.getPassengerEmail());
 		Passenger savedPassenger = passengerRepository.save(passenger);
 		
