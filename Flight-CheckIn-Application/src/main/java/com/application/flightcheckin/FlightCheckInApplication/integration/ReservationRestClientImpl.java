@@ -10,8 +10,8 @@ public class ReservationRestClientImpl implements ReservationRestClient {
 	@Override
 	public Reservation findReservation(Long id) {
 		RestTemplate restTemplate = new RestTemplate();
-		restTemplate.getForObject("", Reservation.class);
-		return null;
+		Reservation reservation = restTemplate.getForObject("http://localhost:8080/reservation/"+id, Reservation.class);
+		return reservation;
 	}
 
 	@Override
