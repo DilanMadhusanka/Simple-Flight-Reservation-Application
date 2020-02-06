@@ -1,5 +1,7 @@
 package com.application.flightcheckin.FlightCheckInApplication.integration;
 
+import org.springframework.web.client.RestTemplate;
+
 import com.application.flightcheckin.FlightCheckInApplication.dto.Reservation;
 import com.application.flightcheckin.FlightCheckInApplication.dto.ReservationUpdateRequest;
 
@@ -7,7 +9,8 @@ public class ReservationRestClientImpl implements ReservationRestClient {
 
 	@Override
 	public Reservation findReservation(Long id) {
-		// TODO Auto-generated method stub
+		RestTemplate restTemplate = new RestTemplate();
+		restTemplate.getForObject("", Reservation.class);
 		return null;
 	}
 
