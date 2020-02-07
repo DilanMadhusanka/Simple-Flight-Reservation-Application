@@ -9,7 +9,7 @@ import com.application.flightcheckin.FlightCheckInApplication.dto.ReservationUpd
 @Component
 public class ReservationRestClientImpl implements ReservationRestClient {
 
-	private static final String RESERVATIONS_REST_URL = "http://localhost:8080/reservation/";
+	private static final String RESERVATIONS_REST_URL = "http://localhost:8080/reservations/";
 
 	@Override
 	public Reservation findReservation(Long id) {
