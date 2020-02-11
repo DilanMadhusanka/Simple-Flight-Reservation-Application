@@ -3,12 +3,14 @@ package com.application.flightreservation.Flight.Reservation.Application.entitie
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Role extends AbstractEntity {
 
 	private String name;
 	
+	@ManyToMany(mappedBy = "roles")
 	private Set<User> users;
 
 	public String getName() {
