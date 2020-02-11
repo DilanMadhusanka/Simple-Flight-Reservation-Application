@@ -1,5 +1,7 @@
 package com.application.flightreservation.Flight.Reservation.Application.entities;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
 
 @Entity
@@ -12,6 +14,8 @@ public class User extends AbstractEntity {
 	private String email;
 	
 	private String password;
+	
+	private Set<Role> roles;
 
 	public String getFirstName() {
 		return firstName;
@@ -43,6 +47,14 @@ public class User extends AbstractEntity {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	public Set<Role> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(Set<Role> roles) {
+		this.roles = roles;
 	}
 
 	@Override
