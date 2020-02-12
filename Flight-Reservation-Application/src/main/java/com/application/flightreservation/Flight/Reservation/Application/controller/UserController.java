@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.application.flightreservation.Flight.Reservation.Application.entities.User;
 import com.application.flightreservation.Flight.Reservation.Application.repo.UserRepository;
+import com.application.flightreservation.Flight.Reservation.Application.services.SecurityService;
 
 @Controller
 public class UserController {
@@ -20,6 +21,9 @@ public class UserController {
 	
 	@Autowired
 	private BCryptPasswordEncoder encoder;
+	
+	@Autowired
+	private SecurityService securityService;
 	
 	@RequestMapping("/showReg")
 	public String showRegistrationPage() {
@@ -40,9 +44,10 @@ public class UserController {
 	
 	@RequestMapping(value="/login", method=RequestMethod.POST)
 	public String login(@RequestParam("email") String email, @RequestParam("password") String password, ModelMap model) {
-		User user = userRepository.findByEmail(email);
 		
-		if(user.getPassword().equals(password)) {
+		boolean loginResponse = securityService.login(email, password);
+		
+		if(loginResponse) {
 			return "findFlights";
 		}
 		else {
